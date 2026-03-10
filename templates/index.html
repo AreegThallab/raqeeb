@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -31,6 +32,7 @@
     overflow-x: hidden;
   }
 
+  /* Background grid */
   body::before {
     content: '';
     position: fixed;
@@ -43,6 +45,7 @@
     z-index: 0;
   }
 
+  /* Glow blobs */
   .blob {
     position: fixed;
     border-radius: 50%;
@@ -61,6 +64,7 @@
     66% { transform: translate(-20px, 20px) scale(0.95); }
   }
 
+  /* ===== NAVBAR ===== */
   nav {
     position: fixed;
     top: 0;
@@ -124,18 +128,20 @@
     border-radius: 20px;
     cursor: pointer;
     transition: opacity 0.2s;
-    border: none;
   }
 
+  /* ===== MAIN CONTENT ===== */
   main {
     position: relative;
     z-index: 1;
     padding-top: 80px;
   }
 
+  /* ===== PAGES ===== */
   .page { display: none; }
   .page.active { display: block; }
 
+  /* ===== HERO ===== */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -249,6 +255,7 @@
 
   .btn-outline:hover { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,0.05); }
 
+  /* Stats bar */
   .stats-bar {
     display: flex;
     justify-content: center;
@@ -276,6 +283,7 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
+  /* ===== SECTION COMMON ===== */
   section {
     padding: 80px 40px;
     max-width: 1200px;
@@ -311,6 +319,7 @@
     max-width: 600px;
   }
 
+  /* ===== FEATURES ===== */
   .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -365,6 +374,7 @@
     line-height: 1.7;
   }
 
+  /* ===== FORM DEMO ===== */
   .demo-wrapper {
     display: grid;
     grid-template-columns: 1fr 380px;
@@ -385,7 +395,6 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 32px;
-    gap: 16px;
   }
 
   .form-title { font-size: 20px; font-weight: 700; }
@@ -492,6 +501,7 @@
   .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(0,212,255,0.25); }
   .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 
+  /* ===== ANALYSIS PANEL ===== */
   .analysis-panel {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -546,6 +556,7 @@
   .analysis-text strong { display: block; margin-bottom: 4px; font-size: 13px; }
   .analysis-text span { color: var(--text-muted); font-size: 12px; }
 
+  /* ===== ALERT / CONTRADICTION ===== */
   .contradiction-alert {
     display: none;
     background: rgba(239,68,68,0.08);
@@ -596,6 +607,7 @@
 
   .btn-exception:hover { background: rgba(245,158,11,0.1); }
 
+  /* Exception modal */
   .modal-overlay {
     display: none;
     position: fixed;
@@ -691,6 +703,7 @@
 
   .btn-submit-exception:hover { transform: translateY(-1px); }
 
+  /* ===== DASHBOARD PAGE ===== */
   .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -741,6 +754,7 @@
     gap: 8px;
   }
 
+  /* Exception table */
   .exception-table { width: 100%; border-collapse: collapse; }
   .exception-table th {
     font-size: 11px;
@@ -771,6 +785,7 @@
   .status-badge.approved { background: rgba(16,185,129,0.15); color: var(--accent3); border: 1px solid rgba(16,185,129,0.3); }
   .status-badge.rejected { background: rgba(239,68,68,0.15); color: var(--danger); border: 1px solid rgba(239,68,68,0.3); }
 
+  /* Chart bars */
   .bar-chart { display: flex; gap: 8px; align-items: flex-end; height: 120px; padding: 0 4px; }
   .bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; }
   .bar {
@@ -782,12 +797,14 @@
   }
   .bar-label { font-size: 10px; color: var(--text-muted); }
 
+  /* Donut chart */
   .donut-wrap { display: flex; align-items: center; gap: 24px; }
   .donut-legend { flex: 1; }
   .legend-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 13px; }
   .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
   .legend-pct { margin-right: auto; color: var(--text-muted); font-size: 12px; }
 
+  /* Live feed */
   .live-feed { max-height: 300px; overflow-y: auto; }
   .live-feed::-webkit-scrollbar { width: 4px; }
   .live-feed::-webkit-scrollbar-track { background: transparent; }
@@ -818,6 +835,7 @@
   .feed-text strong { color: var(--text); display: block; font-size: 13px; margin-bottom: 2px; }
   .feed-time { font-size: 10px; color: var(--text-muted); opacity: 0.6; margin-right: auto; margin-top: 2px; white-space: nowrap; }
 
+  /* ===== HOW IT WORKS ===== */
   .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 60px; position: relative; }
 
   .steps::before {
@@ -860,6 +878,7 @@
   .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
   .step p { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
 
+  /* ===== TECH STACK ===== */
   .tech-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -883,6 +902,7 @@
   .tech-info { font-size: 14px; font-weight: 600; }
   .tech-info span { display: block; font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px; }
 
+  /* ===== FOOTER ===== */
   footer {
     border-top: 1px solid var(--border);
     padding: 40px;
@@ -903,6 +923,7 @@
     margin-bottom: 12px;
   }
 
+  /* Loading spinner */
   .spinner {
     display: inline-block;
     width: 16px;
@@ -916,6 +937,7 @@
 
   @keyframes spin { to { transform: rotate(360deg); } }
 
+  /* Success state */
   .success-overlay {
     display: none;
     position: fixed;
@@ -927,7 +949,6 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    padding: 24px;
   }
 
   .success-overlay.open { display: flex; animation: fadeIn 0.3s ease; }
@@ -949,6 +970,64 @@
   .success-overlay h2 { font-size: 28px; font-weight: 700; margin-bottom: 20px; }
   .success-overlay p { color: var(--text-muted); font-size: 16px; margin-bottom: 28px; }
 
+  /* Responsive */
+  /* ===== HAMBURGER BUTTON ===== */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 8px;
+    z-index: 200;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ===== MOBILE MENU ===== */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 64px;
+    right: 0;
+    left: 0;
+    background: rgba(10,13,20,0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    z-index: 150;
+    padding: 16px;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+  }
+  .mobile-menu a:hover, .mobile-menu a.active {
+    color: var(--accent);
+    background: rgba(0,212,255,0.08);
+    border-color: rgba(0,212,255,0.15);
+  }
+
+  /* ===== TABLET ===== */
   @media (max-width: 900px) {
     .demo-wrapper { grid-template-columns: 1fr; }
     .dashboard-grid { grid-template-columns: repeat(2, 1fr); }
@@ -959,13 +1038,100 @@
     section { padding: 60px 20px; }
   }
 
-  @media (max-width: 600px) {
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    /* Navbar */
+    .nav-links { display: none !important; }
+    .nav-badge { display: none; }
+    .hamburger { display: flex; }
+    nav { padding: 12px 16px; }
+
+    /* Typography */
+    .section-title { font-size: 26px; }
+    .hero h1 { font-size: 42px; }
+    .hero-subtitle { font-size: 14px; }
+
+    /* Layout */
     .dashboard-grid { grid-template-columns: 1fr 1fr; }
     .steps { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
+    .features-grid { grid-template-columns: 1fr; }
+    .tech-grid { grid-template-columns: 1fr 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .kpi-grid { grid-template-columns: 1fr 1fr; }
+    .dashboard-row { grid-template-columns: 1fr; }
+    section { padding: 40px 16px; }
+
+    /* Form */
+    .form-card { padding: 20px 16px; }
+    .submit-btn { font-size: 14px; padding: 14px; }
+    .btn-primary, .btn-outline { padding: 12px 20px; font-size: 14px; }
+
+    /* Analysis panel */
+    .analysis-panel { margin-top: 20px; }
+
+    /* Tables - scroll horizontally */
+    .exception-table { font-size: 12px; }
+    .dash-card { padding: 16px; }
+
+    /* Modals */
+    .modal-content { margin: 16px; padding: 24px 16px; }
+
+    /* Success overlay */
+    .success-overlay > div { padding: 30px 20px; margin: 16px; border-radius: 16px; }
+  }
+
+  @media (max-width: 400px) {
+    .hero h1 { font-size: 34px; }
+    .dashboard-grid { grid-template-columns: 1fr; }
+    .tech-grid { grid-template-columns: 1fr; }
+    .kpi-grid { grid-template-columns: 1fr; }
   }
 </style>
+<script>
+  // تعريف showPage مبكراً في head لضمان توفرها عند تحميل الـ HTML
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(function(p) {
+      p.classList.remove('active');
+      p.style.display = 'none';
+    });
+    var target = document.getElementById('page-' + id);
+    if (target) {
+      target.classList.add('active');
+      target.style.display = 'block';
+    }
+    // تحديث navbar desktop
+    document.querySelectorAll('.nav-links a').forEach(function(a) { a.classList.remove('active'); });
+    var links = document.querySelectorAll('.nav-links a');
+    var pages = ['home','demo','dashboard','how','tech'];
+    var idx = pages.indexOf(id);
+    if (idx >= 0 && links[idx]) links[idx].classList.add('active');
+    // تحديث mobile menu
+    document.querySelectorAll('.mobile-menu a').forEach(function(a) { a.classList.remove('active'); });
+    var mlinks = document.querySelectorAll('.mobile-menu a');
+    if (idx >= 0 && mlinks[idx]) mlinks[idx].classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function toggleMenu() {
+    var menu = document.getElementById('mobile-menu');
+    var btn  = document.getElementById('hamburger');
+    if (menu && btn) {
+      menu.classList.toggle('open');
+      btn.classList.toggle('open');
+    }
+  }
+
+  function showPageMobile(id) {
+    showPage(id);
+    // إغلاق القائمة بعد الاختيار
+    var menu = document.getElementById('mobile-menu');
+    var btn  = document.getElementById('hamburger');
+    if (menu) menu.classList.remove('open');
+    if (btn)  btn.classList.remove('open');
+    return false;
+  }
+</script>
 </head>
 <body>
 
@@ -973,20 +1139,35 @@
 <div class="blob blob-2"></div>
 <div class="blob blob-3"></div>
 
+<!-- NAVBAR -->
 <nav>
   <div class="logo">رَقيب<span>الراصد الذكي للبيانات</span></div>
   <ul class="nav-links">
-    <li><a class="active" onclick="showPage('home', this)">الرئيسية</a></li>
-    <li><a onclick="showPage('demo', this)">تجربة النظام</a></li>
-    <li><a onclick="showPage('dashboard', this)">لوحة التحكم</a></li>
-    <li><a onclick="showPage('how', this)">كيف يعمل</a></li>
-    <li><a onclick="showPage('tech', this)">التقنيات</a></li>
+    <li><a class="active" href="#" onclick="showPage('home');return false;">الرئيسية</a></li>
+    <li><a href="#" onclick="showPage('demo');return false;">تجربة النظام</a></li>
+    <li><a href="#" onclick="showPage('dashboard');return false;">لوحة التحكم</a></li>
+    <li><a href="#" onclick="showPage('how');return false;">كيف يعمل</a></li>
+    <li><a href="#" onclick="showPage('tech');return false;">التقنيات</a></li>
   </ul>
-  <button class="nav-badge" onclick="showPage('demo')">ابدأ الآن ←</button>
+  <button class="nav-badge" onclick="showPage('demo');" type="button">ابدأ الآن ←</button>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu();" type="button" aria-label="القائمة">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#" onclick="showPageMobile('home')">🏠 الرئيسية</a>
+  <a href="#" onclick="showPageMobile('demo')">🧪 تجربة النظام</a>
+  <a href="#" onclick="showPageMobile('dashboard')">📊 لوحة التحكم</a>
+  <a href="#" onclick="showPageMobile('how')">⚙️ كيف يعمل</a>
+  <a href="#" onclick="showPageMobile('tech')">🔧 التقنيات</a>
+  <a href="#" onclick="showPageMobile('demo')" style="margin-top:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--bg);font-weight:700;text-align:center;">ابدأ الآن ←</a>
+</div>
 
 <main>
 
+  <!-- ===== HOME PAGE ===== -->
   <div id="page-home" class="page active">
     <div class="hero">
       <div class="hero-inner">
@@ -999,8 +1180,8 @@
           طبقة ذكاء اصطناعي مدمجة داخل النماذج الرقمية تكتشف <strong>التناقضات الدلالية</strong> لحظة الإدخال،<br>وتمنع وصول البيانات المتناقضة إلى قاعدة البيانات.
         </p>
         <div class="hero-cta">
-          <button class="btn-primary" onclick="showPage('demo')">جرّب النظام الآن</button>
-          <button class="btn-outline" onclick="showPage('how')">كيف يعمل؟</button>
+          <button class="btn-primary" onclick="showPage('demo');" type="button">جرّب النظام الآن</button>
+          <button class="btn-outline" onclick="showPage('how');" type="button">كيف يعمل؟</button>
         </div>
         <div class="stats-bar">
           <div class="stat-item"><div class="stat-num">98%</div><div class="stat-label">دقة الكشف</div></div>
@@ -1011,12 +1192,13 @@
       </div>
     </div>
 
+    <!-- Features -->
     <section>
       <div class="section-tag">المزايا الرئيسية</div>
       <div class="section-title">ما الذي يجعل رَقيب مختلفاً؟</div>
       <p class="section-desc">لا يكتفي بكشف التناقض — بل يوفر آلية منظمة لمعالجته مع الحفاظ على مرونة الواقع.</p>
       <div class="features-grid">
-        <div class="feature-card">
+        <div class="feature-card" style="--c:#00d4ff">
           <div class="feature-icon" style="background:rgba(0,212,255,0.1)">🧠</div>
           <h3>تحليل دلالي لحظي</h3>
           <p>يربط الحقول دلالياً عبر نماذج لغوية ويكتشف التناقضات المنطقية قبل حفظ البيانات — لا بعدها.</p>
@@ -1050,6 +1232,7 @@
     </section>
   </div>
 
+  <!-- ===== DEMO PAGE ===== -->
   <div id="page-demo" class="page">
     <section style="max-width:1200px">
       <div class="section-tag">تجربة تفاعلية</div>
@@ -1057,6 +1240,7 @@
       <p class="section-desc">أدخل بيانات الموظف وشاهد كيف يكتشف النظام التناقضات الدلالية في الوقت الفعلي.</p>
 
       <div class="demo-wrapper">
+        <!-- Form -->
         <div class="form-container">
           <div class="form-header">
             <div>
@@ -1123,6 +1307,7 @@
             <input class="form-input" type="number" placeholder="2018" id="f-grad" min="1970" max="2025" onchange="analyzeForm()">
           </div>
 
+          <!-- Contradiction Alert -->
           <div class="contradiction-alert" id="alert-box">
             <div class="alert-title">⚠️ تناقض دلالي مكتشف</div>
             <div class="alert-desc" id="alert-desc"></div>
@@ -1141,6 +1326,7 @@
           </div>
         </div>
 
+        <!-- Analysis Panel -->
         <div class="analysis-panel">
           <div class="panel-header">
             <h3>تحليل رَقيب</h3>
@@ -1160,9 +1346,10 @@
     </section>
   </div>
 
+  <!-- ===== DASHBOARD PAGE ===== -->
   <div id="page-dashboard" class="page">
     <section>
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:16px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;flex-wrap:gap">
         <div>
           <div class="section-tag">لوحة المشرف</div>
           <div class="section-title" style="margin-bottom:0">مركز المراقبة الحي</div>
@@ -1172,10 +1359,11 @@
         </div>
       </div>
 
+      <!-- KPIs -->
       <div class="dashboard-grid">
         <div class="kpi-card">
           <div class="kpi-label">إجمالي النماذج اليوم</div>
-          <div class="kpi-value" data-kpi="total" style="color:var(--accent)">1247</div>
+          <div class="kpi-value" style="color:var(--accent)">1,247</div>
           <div class="kpi-change up">↑ 12% عن أمس</div>
         </div>
         <div class="kpi-card">
@@ -1195,6 +1383,7 @@
         </div>
       </div>
 
+      <!-- Charts Row -->
       <div class="dashboard-row">
         <div class="dash-card">
           <div class="dash-card-title">📈 التناقضات المكتشفة – آخر 7 أيام</div>
@@ -1227,6 +1416,7 @@
         </div>
       </div>
 
+      <!-- Records Table -->
       <div class="dash-card" style="margin-bottom:24px">
         <div class="dash-card-title">✅ السجلات المُرسلة</div>
         <div style="overflow-x:auto">
@@ -1245,6 +1435,7 @@
         </div>
       </div>
 
+      <!-- Exceptions Table -->
       <div class="dash-card" style="margin-bottom:24px">
         <div class="dash-card-title">📋 الاستثناءات بانتظار المراجعة</div>
         <div style="overflow-x:auto">
@@ -1308,6 +1499,7 @@
         </div>
       </div>
 
+      <!-- Live Feed -->
       <div class="dash-card">
         <div class="dash-card-title" style="display:flex;justify-content:space-between">
           <span>⚡ السجل الحي</span>
@@ -1339,6 +1531,7 @@
     </section>
   </div>
 
+  <!-- ===== HOW IT WORKS PAGE ===== -->
   <div id="page-how" class="page">
     <section>
       <div class="section-tag">آلية العمل</div>
@@ -1367,6 +1560,7 @@
         </div>
       </div>
 
+      <!-- Algorithms section -->
       <div style="margin-top:80px">
         <div class="section-tag">الخوارزميات</div>
         <div class="section-title">المحركات التقنية</div>
@@ -1396,6 +1590,7 @@
     </section>
   </div>
 
+  <!-- ===== TECH STACK PAGE ===== -->
   <div id="page-tech" class="page">
     <section>
       <div class="section-tag">البنية التقنية</div>
@@ -1415,6 +1610,7 @@
         <div class="tech-item"><div class="tech-icon">🔒</div><div class="tech-info">Privacy Layer<span>إخفاء الهوية والخصوصية</span></div></div>
       </div>
 
+      <!-- Architecture diagram -->
       <div style="margin-top:60px">
         <div class="section-tag">معمارية النظام</div>
         <div class="section-title" style="font-size:28px">طبقات النظام</div>
@@ -1436,7 +1632,7 @@
           <div style="text-align:center;color:var(--accent);font-size:20px">↕</div>
           <div style="background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.2);border-radius:16px;padding:20px 28px;display:flex;align-items:center;gap:16px">
             <span style="font-size:24px">📊</span>
-            <div><div style="font-weight:700;margin-bottom:4px">Admin Dashboard Layer</div><div style="font-size:13px;color:var(--text-muted)">لوحة مشرف لمراجعة الاستثناءات واتخاذ القرار المدعوم</div></div>
+            <div><div style="font-weight:700;margin-bottom:4px">Admin Dashboard Layer</div><div class="-text" style="font-size:13px;color:var(--text-muted)">لوحة مشرف لمراجعة الاستثناءات واتخاذ القرار المدعوم</div></div>
           </div>
         </div>
       </div>
@@ -1445,12 +1641,14 @@
 
 </main>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-logo">رَقيب</div>
   <p>الراصد الذكي مع الاستثناء المبرر واللوحة الحية</p>
   <p style="margin-top:8px;font-size:12px;opacity:0.5">مشروع تقني مبتكر لتحسين جودة البيانات من المصدر</p>
 </footer>
 
+<!-- Exception Modal -->
 <div class="modal-overlay" id="exception-modal">
   <div class="modal">
     <div class="modal-title">📎 تقديم استثناء مبرر</div>
@@ -1470,6 +1668,7 @@
   </div>
 </div>
 
+<!-- Success Overlay -->
 <div class="success-overlay" id="success-overlay">
   <div class="success-icon">✓</div>
   <h2>تم إرسال النموذج بنجاح!</h2>
@@ -1485,74 +1684,92 @@
 </div>
 
 <script>
-  const eduLevels = { primary:1, intermediate:2, secondary:3, diploma:4, bachelor:5, master:6, phd:7 };
-  const eduNamesMap = { primary:'ابتدائي', intermediate:'متوسط', secondary:'ثانوي', diploma:'دبلوم', bachelor:'بكالوريوس', master:'ماجستير', phd:'دكتوراه' };
+  // ===== NAVIGATION: showPage معرّفة في <head> =====
 
+  // ===== CONFIDENCE =====
+
+  // ============================================================
+  // PRIVACY LAYER – إخفاء الهوية قبل إرسال أي بيانات لـ Claude
+  // ============================================================
+  function anonymizeForAI(rawData) {
+    const sal = parseInt(rawData.salary) || 0;
+    return {
+      edu_level:    rawData.edu        || null,
+      job_title:    rawData.job        || null,
+      birth_year:   rawData.birthYear  ? parseInt(rawData.birthYear) : null,
+      grad_year:    rawData.grad       ? parseInt(rawData.grad)      : null,
+      salary_range: sal === 0 ? null : sal < 3000 ? 'low' : sal < 10000 ? 'mid' : 'high'
+      // لا يوجد اسم أو رقم هوية أو أي بيانات شخصية
+    };
+  }
+
+  // ============================================================
+  // CLAUDE API – يتصل عبر Backend بأمان
+  // ============================================================
+  async function analyzeWithClaude(anonymizedData) {
+    try {
+      const res = await fetch("/api/analyze", {
+        method:  "POST",
+        headers: { "Content-Type": "application/json" },
+        body:    JSON.stringify(anonymizedData)
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const result = await res.json();
+      if (result.error) throw new Error(result.error);
+      return result;
+    } catch(e) {
+      console.warn("Groq AI غير متاح، يستخدم التحليل المحلي:", e.message);
+      return null;
+    }
+  }
+
+  // ============================================================
+  // تحليل كامل يدمج Groq AI
+  // ============================================================
+  async function runFullAnalysis() {
+    const edu     = document.getElementById('f-edu').value;
+    const job     = document.getElementById('f-job').value.trim();
+    const birthYr = document.getElementById('f-exp').value;
+    const salary  = document.getElementById('f-salary').value;
+    const grad    = document.getElementById('f-grad').value;
+
+    const anonymized = anonymizeForAI({ edu, job, birthYear: birthYr, salary, grad });
+    const aiResult   = await analyzeWithClaude(anonymized);
+
+    if (aiResult && typeof aiResult.confidence_score === 'number') {
+      confidenceScore = aiResult.confidence_score;
+      updateConfidenceUI(confidenceScore);
+      const sev = aiResult.severity || 'medium';
+      if (aiResult.has_contradiction) {
+        contradictions = [aiResult.reason];
+        updateAnalysisPanel([{
+          type: 'error',
+          icon: sev === 'high' ? '🚨' : '⚠️',
+          title: 'Groq AI: تناقض دلالي مكتشف',
+          desc:  aiResult.reason
+        }]);
+        showAlert(aiResult.reason);
+      } else {
+        contradictions = [];
+        updateAnalysisPanel([{
+          type: 'ok', icon: '✅',
+          title: 'Groq AI: لا يوجد تناقض',
+          desc:  aiResult.reason || 'البيانات متسقة منطقياً'
+        }]);
+        document.getElementById('alert-box').classList.remove('visible');
+      }
+    }
+  }
+
+  const eduLevels = { primary:1, intermediate:2, secondary:3, diploma:4, bachelor:5, master:6, phd:7 };
+
+  // كلمات مفتاحية للوظائف المتطلبة لمؤهل عالي
   const highEduJobs = ['مهندس','دكتور','طبيب','محلل','مدير','باحث','أستاذ','محاسب','مبرمج','مطور','صيدلاني','معلم','مدرس'];
   const midEduJobs = ['ممرض','فني','مشرف','محاسب','مصمم','مسوق'];
   const lowEduJobs = ['سائق','حارس','عامل','نظافة','مستودع'];
 
   let contradictions = [];
   let confidenceScore = 100;
-  let recordCounter = 0;
-
-  function showPage(id, clickedLink = null) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-
-    const targetPage = document.getElementById(`page-${id}`);
-    if (targetPage) {
-      targetPage.classList.add('active');
-    }
-
-    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-
-    if (clickedLink) {
-      clickedLink.classList.add('active');
-    } else {
-      const pageMap = {
-        home: 0,
-        demo: 1,
-        dashboard: 2,
-        how: 3,
-        tech: 4
-      };
-      const links = document.querySelectorAll('.nav-links a');
-      if (links[pageMap[id]]) {
-        links[pageMap[id]].classList.add('active');
-      }
-    }
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function anonymizeForAI(rawData) {
-    const sal = parseInt(rawData.salary) || 0;
-    return {
-      edu_level: rawData.edu || null,
-      job_title: rawData.job || null,
-      birth_year: rawData.birthYear ? parseInt(rawData.birthYear) : null,
-      grad_year: rawData.grad ? parseInt(rawData.grad) : null,
-      salary_range: sal === 0 ? null : sal < 3000 ? 'low' : sal < 10000 ? 'mid' : 'high'
-    };
-  }
-
-  async function analyzeWithClaude(anonymizedData) {
-    try {
-      const res = await fetch('/api/analyze', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(anonymizedData)
-      });
-
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const result = await res.json();
-      if (result.error) throw new Error(result.error);
-      return result;
-    } catch (e) {
-      console.warn('Groq AI غير متاح، سيتم الاعتماد على التحليل المحلي:', e.message);
-      return null;
-    }
-  }
 
   function getJobLevel(jobText) {
     if (!jobText) return null;
@@ -1561,45 +1778,6 @@
     for (const w of lowEduJobs) if (jobText.includes(w)) return 'low';
     return null;
   }
-
-  async function runFullAnalysis() {
-    const edu = document.getElementById('f-edu').value;
-    const job = document.getElementById('f-job').value.trim();
-    const birthYr = document.getElementById('f-exp').value;
-    const salary = document.getElementById('f-salary').value;
-    const grad = document.getElementById('f-grad').value;
-
-    const anonymized = anonymizeForAI({ edu, job, birthYear: birthYr, salary, grad });
-    const aiResult = await analyzeWithClaude(anonymized);
-
-    if (aiResult && typeof aiResult.confidence_score === 'number') {
-      confidenceScore = aiResult.confidence_score;
-      updateConfidenceUI(confidenceScore);
-
-      const sev = aiResult.severity || 'medium';
-
-      if (aiResult.has_contradiction) {
-        contradictions = [aiResult.reason || 'تم اكتشاف تناقض دلالي'];
-        updateAnalysisPanel([{
-          type: 'error',
-          icon: sev === 'high' ? '🚨' : '⚠️',
-          title: 'Groq AI: تناقض دلالي مكتشف',
-          desc: aiResult.reason || 'يوجد تناقض دلالي'
-        }]);
-        showAlert(aiResult.reason || 'يوجد تناقض دلالي في البيانات');
-      } else {
-        contradictions = [];
-        updateAnalysisPanel([{
-          type: 'ok',
-          icon: '✅',
-          title: 'Groq AI: لا يوجد تناقض',
-          desc: aiResult.reason || 'البيانات متسقة منطقياً'
-        }]);
-        document.getElementById('alert-box').classList.remove('visible');
-      }
-    }
-  }
-
   function analyzeForm() {
     const edu = document.getElementById('f-edu').value;
     const job = document.getElementById('f-job').value.trim();
@@ -1611,12 +1789,14 @@
     let analyses = [];
     let score = 100;
 
+    const eduNames = { primary:'ابتدائي', intermediate:'متوسط', secondary:'ثانوي', diploma:'دبلوم', bachelor:'بكالوريوس', master:'ماجستير', phd:'دكتوراه' };
+
+    // Check 1: education vs job (text-based)
     if (edu && job) {
       const jobLevel = getJobLevel(job);
       const eduLevel = eduLevels[edu];
-
       if (jobLevel === 'high' && eduLevel < 5) {
-        contradictions.push(`وظيفة "${job}" تتطلب في الغالب مؤهلاً جامعياً كحد أدنى، لكن المؤهل المُدخل هو "${eduNamesMap[edu]}".`);
+        contradictions.push(`وظيفة "${job}" تتطلب في الغالب مؤهلاً جامعياً كحد أدنى، لكن المؤهل المُدخل هو "${eduNames[edu]}".`);
         score -= 40;
         analyses.push({ type:'error', icon:'⚠️', title:'تناقض: المؤهل والوظيفة', desc:`"${job}" تتطلب عادةً بكالوريوس أو أعلى` });
       } else if (jobLevel === 'low' && eduLevel >= 6) {
@@ -1626,6 +1806,7 @@
       }
     }
 
+    // Check 2: birth year vs graduation year
     if (birthYear > 0 && grad > 0) {
       const ageAtGrad = grad - birthYear;
       if (ageAtGrad < 16) {
@@ -1641,13 +1822,14 @@
       }
     }
 
+    // Check 3: salary range
     if (salary > 0 && edu) {
       const eduLevel = eduLevels[edu];
       if (eduLevel >= 5 && salary < 3000) {
-        contradictions.push(`الراتب (${salary.toLocaleString()} ر.س) منخفض جداً لحامل مؤهل ${eduNamesMap[edu]}.`);
+        contradictions.push(`الراتب (${salary.toLocaleString()} ر.س) منخفض جداً لحامل مؤهل ${eduNames[edu]}.`);
         score -= 20;
         analyses.push({ type:'error', icon:'⚠️', title:'تناقض: الراتب والمؤهل', desc:'الراتب لا يتناسب مع المستوى التعليمي' });
-      } else {
+      } else if (salary > 0) {
         analyses.push({ type:'ok', icon:'✅', title:'الراتب مناسب', desc:'الراتب ضمن النطاق المقبول' });
       }
     }
@@ -1656,6 +1838,7 @@
       analyses.push({ type:'checking', icon:'⏳', title:'جاري المراقبة...', desc:'أكمل إدخال الحقول للتحليل الفوري' });
     }
 
+    // التحليل المحلي الفوري
     confidenceScore = Math.max(0, score);
     updateConfidenceUI(confidenceScore);
     updateAnalysisPanel(analyses);
@@ -1666,18 +1849,17 @@
       document.getElementById('alert-box').classList.remove('visible');
     }
 
+    // Groq AI التحليل الذكي (يعمل في الخلفية بعد 800ms)
     if (edu && job) {
       clearTimeout(window._claudeTimer);
-      window._claudeTimer = setTimeout(() => {
-        runFullAnalysis();
-      }, 800);
+      window._claudeTimer = setTimeout(() => runFullAnalysis(), 800);
     }
   }
 
   function updateConfidenceUI(score) {
     const val = document.getElementById('conf-value');
     const ring = document.getElementById('conf-ring');
-    const circumference = 110;
+    const circumference = 2 * Math.PI * 17; // ≈ 106.8
     const offset = circumference * (1 - score / 100);
 
     val.textContent = score + '%';
@@ -1716,10 +1898,12 @@
   }
 
   function fixData() {
+    // مسح الحقول المتعارضة ليعيد المستخدم إدخالها
     document.getElementById('f-edu').value = '';
     analyzeForm();
   }
 
+  // ===== EXCEPTION MODAL =====
   function openExceptionModal() {
     document.getElementById('exception-modal').classList.add('open');
   }
@@ -1742,31 +1926,32 @@
       document.getElementById('exception-reason').style.borderColor = 'var(--danger)';
       return;
     }
-
     closeModal();
+    // Add to live feed
     addToFeed('warning', 'استثناء مُقدَّم للمراجعة', 'تم إرسال طلب الاستثناء للمشرف مع المستند الداعم');
-    contradictions = [];
+    // Allow submit
     document.getElementById('alert-box').classList.remove('visible');
   }
 
+  // ===== SUBMIT FORM =====
+  let recordCounter = 0;
+  const eduNamesMap = { primary:'ابتدائي', intermediate:'متوسط', secondary:'ثانوي', diploma:'دبلوم', bachelor:'بكالوريوس', master:'ماجستير', phd:'دكتوراه' };
+
   async function submitForm() {
     const errBox = document.getElementById('submit-error');
-
     if (contradictions.length > 0) {
       document.getElementById('alert-box').classList.add('visible');
       errBox.style.display = 'block';
       errBox.style.animation = 'slideDown 0.3s ease';
       return;
     }
-
     errBox.style.display = 'none';
 
     const fname = document.getElementById('f-fname').value.trim();
     const lname = document.getElementById('f-lname').value.trim();
-    const edu = document.getElementById('f-edu').value;
-    const job = document.getElementById('f-job').value.trim();
-
-    if (!fname || !lname || !edu || !job) {
+    const edu2 = document.getElementById('f-edu').value;
+    const job2 = document.getElementById('f-job').value.trim();
+    if (!fname || !lname || !edu2 || !job2) {
       alert('يرجى ملء جميع الحقول المطلوبة');
       return;
     }
@@ -1776,14 +1961,16 @@
     btn.innerHTML = 'جاري التحقق والحفظ...<span class="spinner"></span>';
 
     const birthYear = document.getElementById('f-exp').value || '—';
-    const salaryRaw = document.getElementById('f-salary').value;
-    const salary = salaryRaw ? parseInt(salaryRaw).toLocaleString() : '—';
+    const salary = document.getElementById('f-salary').value ? parseInt(document.getElementById('f-salary').value).toLocaleString() : '—';
     const grad = document.getElementById('f-grad').value || '—';
     const conf = confidenceScore;
+    const edu = edu2;
+    const job = job2;
     const fullName = fname + ' ' + lname;
     const now = new Date();
     const timeStr = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
 
+    // Privacy Layer → Groq AI steps
     btn.innerHTML = '🔒 إخفاء الهوية...<span class="spinner"></span>';
     await new Promise(r => setTimeout(r, 700));
 
@@ -1796,76 +1983,64 @@
     btn.disabled = false;
     btn.innerHTML = 'إرسال النموذج وحفظ البيانات';
 
-    recordCounter++;
-    const tbody = document.getElementById('records-tbody');
-    const noRow = document.getElementById('no-records-row');
-    if (noRow) noRow.remove();
+    // إضافة للجدول
+      recordCounter++;
+      const tbody = document.getElementById('records-tbody');
+      const noRow = document.getElementById('no-records-row');
+      if (noRow) noRow.remove();
 
-    const confColor = conf >= 80 ? 'var(--accent3)' : conf >= 50 ? 'var(--warning)' : 'var(--danger)';
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td style="color:var(--text-muted)">R-${String(recordCounter).padStart(3,'0')}</td>
-      <td style="font-weight:600">${fullName}</td>
-      <td>${eduNamesMap[edu] || edu}</td>
-      <td>${job}</td>
-      <td>${birthYear}</td>
-      <td>${salary}</td>
-      <td>${grad}</td>
-      <td><span style="font-weight:700;color:${confColor}">${conf}%</span></td>
-      <td style="font-size:11px;color:var(--text-muted)">${timeStr}</td>
-    `;
-    tbody.insertBefore(tr, tbody.firstChild);
+      const confColor = conf >= 80 ? 'var(--accent3)' : conf >= 50 ? 'var(--warning)' : 'var(--danger)';
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td style="color:var(--text-muted)">R-${String(recordCounter).padStart(3,'0')}</td>
+        <td style="font-weight:600">${fullName}</td>
+        <td>${eduNamesMap[edu] || edu}</td>
+        <td>${job}</td>
+        <td>${birthYear}</td>
+        <td>${salary}</td>
+        <td>${grad}</td>
+        <td><span style="font-weight:700;color:${confColor}">${conf}%</span></td>
+        <td style="font-size:11px;color:var(--text-muted)">${timeStr}</td>`;
+      tbody.insertBefore(tr, tbody.firstChild);
 
-    const kpiEl = document.querySelector('.kpi-value[data-kpi="total"]');
-    if (kpiEl) {
-      const current = parseInt(kpiEl.textContent.replace(/,/g, '')) || 0;
-      kpiEl.textContent = (current + 1).toLocaleString();
-    }
+      // تحديث KPI
+      const kpiEl = document.querySelector('.kpi-value[data-kpi="total"]');
+      if (kpiEl) kpiEl.textContent = (parseInt(kpiEl.textContent.replace(',','')) + 1).toLocaleString();
 
-    addToFeed('ok', `نموذج مقبول – ${fullName}`, `جميع الحقول متسقة، درجة ثقة ${conf}%`);
+      addToFeed('ok', `نموذج مقبول – ${fullName}`, `جميع الحقول متسقة، درجة ثقة ${conf}%`);
 
-    const confEl = document.getElementById('final-conf');
-    const confLabel = document.getElementById('final-conf-label');
-    confEl.textContent = conf + '%';
-
-    if (conf >= 80) {
-      confEl.style.color = 'var(--accent3)';
-      confLabel.textContent = 'بيانات موثوقة — تم الحفظ في لوحة التحكم ✓';
-      confLabel.style.color = 'var(--accent3)';
-    } else if (conf >= 50) {
-      confEl.style.color = 'var(--warning)';
-      confLabel.textContent = 'بيانات مقبولة مع استثناء — بانتظار مراجعة المشرف';
-      confLabel.style.color = 'var(--warning)';
-    } else {
-      confEl.style.color = 'var(--danger)';
-      confLabel.textContent = 'بيانات ذات موثوقية منخفضة — مُحالة للمراجعة';
-      confLabel.style.color = 'var(--danger)';
-    }
-
-    document.getElementById('success-overlay').classList.add('open');
-    resetForm();
-  }
+      // نافذة النجاح مع تحديث الثقة والألوان
+      const confEl = document.getElementById('final-conf');
+      const confLabel = document.getElementById('final-conf-label');
+      confEl.textContent = conf + '%';
+      if (conf >= 80) {
+        confEl.style.color = 'var(--accent3)';
+        confLabel.textContent = 'بيانات موثوقة — تم الحفظ في لوحة التحكم ✓';
+        confLabel.style.color = 'var(--accent3)';
+      } else if (conf >= 50) {
+        confEl.style.color = 'var(--warning)';
+        confLabel.textContent = 'بيانات مقبولة مع استثناء — بانتظار مراجعة المشرف';
+        confLabel.style.color = 'var(--warning)';
+      } else {
+        confEl.style.color = 'var(--danger)';
+        confLabel.textContent = 'بيانات ذات موثوقية منخفضة — مُحالة للمراجعة';
+        confLabel.style.color = 'var(--danger)';
+      }
+      document.getElementById('success-overlay').classList.add('open');
+      resetForm();
+  }  // end submitForm
 
   function closeSuccess() {
     document.getElementById('success-overlay').classList.remove('open');
-    showPage('demo');
   }
 
   function resetForm() {
-    ['f-fname','f-lname','f-exp','f-salary','f-grad','f-job'].forEach(id => {
-      document.getElementById(id).value = '';
-    });
-
+    ['f-fname','f-lname','f-exp','f-salary','f-grad','f-job'].forEach(id => document.getElementById(id).value = '');
     document.getElementById('f-edu').value = '';
-    document.getElementById('exception-reason').value = '';
-    document.getElementById('file-name').style.display = 'none';
-
     contradictions = [];
     confidenceScore = 100;
     updateConfidenceUI(100);
     document.getElementById('alert-box').classList.remove('visible');
-    document.getElementById('submit-error').style.display = 'none';
-
     document.getElementById('analysis-body').innerHTML = `
       <div class="analysis-item">
         <div class="analysis-icon">⏳</div>
@@ -1873,10 +2048,10 @@
           <strong>في انتظار البيانات</strong>
           <span>ابدأ بملء النموذج لبدء التحليل الفوري</span>
         </div>
-      </div>
-    `;
+      </div>`;
   }
 
+  // ===== DASHBOARD =====
   function approveEx(btn) {
     const badge = btn.closest('tr').querySelector('.status-badge');
     badge.className = 'status-badge approved';
@@ -1897,18 +2072,18 @@
     const item = document.createElement('div');
     item.className = 'feed-item';
     item.innerHTML = `
-      <div class="feed-dot" style="background:${colors[type] || 'var(--accent)'}"></div>
+      <div class="feed-dot" style="background:${colors[type]}"></div>
       <div class="feed-text"><strong>${title}</strong>${desc}</div>
-      <div class="feed-time">الآن</div>
-    `;
+      <div class="feed-time">الآن</div>`;
     feed.insertBefore(item, feed.firstChild);
   }
 
+  // Simulate live feed
   const liveEvents = [
     { type:'ok', title:'نموذج مقبول – م. الشهري', desc:'درجة ثقة 95%، حفظ بنجاح' },
     { type:'error', title:'تناقض مكتشف – مجهول', desc:'محاسب + مؤهل ابتدائي — تم التنبيه' },
     { type:'ok', title:'نموذج مقبول – أ. القرني', desc:'جميع الحقول متسقة دلالياً' },
-    { type:'warning', title:'استثناء جديد – م. البلوي', desc:'شهادة معادلة قيد المراجعة' }
+    { type:'warning', title:'استثناء جديد – م. البلوي', desc:'شهادة معادلة قيد المراجعة' },
   ];
 
   let eventIdx = 0;
@@ -1919,7 +2094,7 @@
       eventIdx++;
     }
   }, 5000);
-</script>
 
+</script>
 </body>
 </html>
