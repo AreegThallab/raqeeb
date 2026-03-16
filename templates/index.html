@@ -786,16 +786,36 @@
   .status-badge.rejected { background: rgba(239,68,68,0.15); color: var(--danger); border: 1px solid rgba(239,68,68,0.3); }
 
   /* Chart bars */
-  .bar-chart { display: flex; gap: 8px; align-items: flex-end; height: 120px; padding: 0 4px; }
-  .bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .bar-chart {
+    display: flex;
+    gap: 6px;
+    align-items: flex-end;
+    height: 140px;
+    padding: 0 4px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .bar-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    height: 100%;
+  }
   .bar {
     width: 100%;
     border-radius: 6px 6px 0 0;
-    background: linear-gradient(180deg, var(--accent), rgba(0,212,255,0.3));
-    transition: all 0.5s ease;
-    min-height: 4px;
+    background: linear-gradient(180deg, var(--accent), rgba(0,212,255,0.2));
+    transition: height 0.6s ease;
+    display: block;
+    min-height: 6px;
+    flex-shrink: 0;
   }
-  .bar-label { font-size: 10px; color: var(--text-muted); }
+  .bar:hover { opacity: 0.85; cursor: pointer; }
+  .bar-label { font-size: 8.5px; color: var(--text-muted); flex-shrink: 0; text-align:center; }
+  .bar-value { font-size: 9px; color: var(--accent); font-weight: 700; flex-shrink: 0; }
 
   /* Donut chart */
   .donut-wrap { display: flex; align-items: center; gap: 24px; }
@@ -1237,14 +1257,14 @@
     <section style="max-width:1200px">
       <div class="section-tag">تجربة تفاعلية</div>
       <div class="section-title">جرّب رَقيب مباشرةً</div>
-      <p class="section-desc">أدخل بيانات الموظف وشاهد كيف يكتشف النظام التناقضات الدلالية في الوقت الفعلي.</p>
+      <p class="section-desc">أدخل البيانات وشاهد كيف يكتشف النظام التناقضات الدلالية في الوقت الفعلي.</p>
 
       <div class="demo-wrapper">
         <!-- Form -->
         <div class="form-container">
           <div class="form-header">
             <div>
-              <div class="form-title">نموذج تسجيل الموظف</div>
+              <div class="form-title">نموذج التسجيل</div>
               <div style="font-size:12px;color:var(--text-muted);margin-top:4px">يراقب رَقيب كل إدخال بشكل لحظي</div>
             </div>
             <div class="confidence-badge">
@@ -1386,31 +1406,79 @@
       <!-- Charts Row -->
       <div class="dashboard-row">
         <div class="dash-card">
-          <div class="dash-card-title">📈 التناقضات المكتشفة – آخر 7 أيام</div>
-          <div class="bar-chart">
-            <div class="bar-wrap"><div class="bar" style="height:60%"></div><div class="bar-label">إث</div></div>
-            <div class="bar-wrap"><div class="bar" style="height:80%"></div><div class="bar-label">أر</div></div>
-            <div class="bar-wrap"><div class="bar" style="height:45%"></div><div class="bar-label">خم</div></div>
-            <div class="bar-wrap"><div class="bar" style="height:90%"></div><div class="bar-label">جم</div></div>
-            <div class="bar-wrap"><div class="bar" style="height:30%"></div><div class="bar-label">سب</div></div>
-            <div class="bar-wrap"><div class="bar" style="height:55%"></div><div class="bar-label">أح</div></div>
-            <div class="bar-wrap"><div class="bar" style="height:70%;background:linear-gradient(180deg,var(--accent3),rgba(16,185,129,0.3))"></div><div class="bar-label">يو</div></div>
+          <div class="dash-card-title">📈 التناقضات المكتشفة – آخر 8 أيام</div>
+          <div class="bar-chart" id="bar-chart">
+            <div class="bar-wrap">
+              <div class="bar-value">12</div>
+              <div class="bar" style="height:60%"></div>
+              <div class="bar-label">الإثنين</div>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar-value">7</div>
+              <div class="bar" style="height:35%"></div>
+              <div class="bar-label">الثلاثاء</div>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar-value">16</div>
+              <div class="bar" style="height:80%"></div>
+              <div class="bar-label">الأربعاء</div>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar-value">9</div>
+              <div class="bar" style="height:45%"></div>
+              <div class="bar-label">الخميس</div>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar-value">18</div>
+              <div class="bar" style="height:90%;background:linear-gradient(180deg,var(--danger),rgba(239,68,68,0.2))"></div>
+              <div class="bar-label">الجمعة</div>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar-value">6</div>
+              <div class="bar" style="height:30%"></div>
+              <div class="bar-label">السبت</div>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar-value">11</div>
+              <div class="bar" style="height:55%"></div>
+              <div class="bar-label">الأحد</div>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar-value">14</div>
+              <div class="bar" style="height:70%;background:linear-gradient(180deg,var(--accent3),rgba(16,185,129,0.2))"></div>
+              <div class="bar-label">اليوم</div>
+            </div>
           </div>
         </div>
 
         <div class="dash-card">
           <div class="dash-card-title">🎯 توزيع أنواع التناقضات</div>
           <div class="donut-wrap">
-            <svg width="100" height="100" viewBox="0 0 100 100" style="transform:rotate(-90deg);flex-shrink:0">
-              <circle cx="50" cy="50" r="40" fill="none" stroke="var(--border)" stroke-width="12"/>
-              <circle cx="50" cy="50" r="40" fill="none" stroke="var(--accent)" stroke-width="12" stroke-dasharray="251" stroke-dashoffset="63" stroke-linecap="round"/>
-              <circle cx="50" cy="50" r="40" fill="none" stroke="var(--accent2)" stroke-width="12" stroke-dasharray="251" stroke-dashoffset="188" opacity="0.8" stroke-linecap="round"/>
+            <svg width="110" height="110" viewBox="0 0 100 100" style="transform:rotate(-90deg);flex-shrink:0">
+              <!-- خلفية -->
+              <circle cx="50" cy="50" r="38" fill="none" stroke="var(--border)" stroke-width="11"/>
+              <!-- المؤهل والوظيفة: 45% → dasharray=251, يُعرض 113 منها -->
+              <circle cx="50" cy="50" r="38" fill="none" stroke="var(--accent)"  stroke-width="11"
+                stroke-dasharray="107 144" stroke-dashoffset="0" stroke-linecap="butt"/>
+              <!-- سنة الميلاد والتخرج: 20% → 50 وحدة -->
+              <circle cx="50" cy="50" r="38" fill="none" stroke="var(--accent2)" stroke-width="11"
+                stroke-dasharray="48 203" stroke-dashoffset="-107" stroke-linecap="butt"/>
+              <!-- الراتب والمؤهل: 15% → 38 وحدة -->
+              <circle cx="50" cy="50" r="38" fill="none" stroke="var(--accent3)" stroke-width="11"
+                stroke-dasharray="36 215" stroke-dashoffset="-155" stroke-linecap="butt"/>
+              <!-- السياق الدلالي: 12% → 30 وحدة -->
+              <circle cx="50" cy="50" r="38" fill="none" stroke="var(--warning)" stroke-width="11"
+                stroke-dasharray="28 223" stroke-dashoffset="-191" stroke-linecap="butt"/>
+              <!-- الفجوة الزمنية: 8% → 20 وحدة -->
+              <circle cx="50" cy="50" r="38" fill="none" stroke="var(--danger)"  stroke-width="11"
+                stroke-dasharray="19 232" stroke-dashoffset="-219" stroke-linecap="butt"/>
             </svg>
             <div class="donut-legend">
               <div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div> المؤهل والوظيفة <span class="legend-pct">45%</span></div>
-              <div class="legend-item"><div class="legend-dot" style="background:var(--accent2)"></div> الخبرة والتخرج <span class="legend-pct">30%</span></div>
-              <div class="legend-item"><div class="legend-dot" style="background:var(--accent3)"></div> الراتب والمستوى <span class="legend-pct">15%</span></div>
-              <div class="legend-item"><div class="legend-dot" style="background:var(--warning)"></div> أخرى <span class="legend-pct">10%</span></div>
+              <div class="legend-item"><div class="legend-dot" style="background:var(--accent2)"></div> سنة الميلاد والتخرج <span class="legend-pct">20%</span></div>
+              <div class="legend-item"><div class="legend-dot" style="background:var(--accent3)"></div> الراتب والمؤهل <span class="legend-pct">15%</span></div>
+              <div class="legend-item"><div class="legend-dot" style="background:var(--warning)"></div> التناقض الدلالي <span class="legend-pct">12%</span></div>
+              <div class="legend-item"><div class="legend-dot" style="background:var(--danger)"></div> الفجوة الزمنية <span class="legend-pct">8%</span></div>
             </div>
           </div>
         </div>
@@ -1921,16 +1989,68 @@
   });
 
   function submitException() {
-    const reason = document.getElementById('exception-reason').value.trim();
+    const reason   = document.getElementById('exception-reason').value.trim();
+    const fileInput = document.getElementById('file-upload');
+    const hasFile  = fileInput && fileInput.files && fileInput.files.length > 0;
+    let valid = true;
+
+    // تحقق من النص
     if (!reason) {
       document.getElementById('exception-reason').style.borderColor = 'var(--danger)';
-      return;
+      document.getElementById('exception-reason').placeholder = '⚠️ هذا الحقل مطلوب';
+      valid = false;
+    } else {
+      document.getElementById('exception-reason').style.borderColor = '';
     }
+
+    // تحقق من الملف
+    const uploadArea = document.querySelector('.upload-area');
+    if (!hasFile) {
+      uploadArea.style.borderColor = 'var(--danger)';
+      uploadArea.style.background  = 'rgba(239,68,68,0.05)';
+      uploadArea.querySelector('p').textContent = '⚠️ يجب رفع مستند داعم';
+      valid = false;
+    } else {
+      uploadArea.style.borderColor = '';
+      uploadArea.style.background  = '';
+    }
+
+    if (!valid) return;
+
+    // إذا كل شيء صح → أرسل
     closeModal();
-    // Add to live feed
-    addToFeed('warning', 'استثناء مُقدَّم للمراجعة', 'تم إرسال طلب الاستثناء للمشرف مع المستند الداعم');
-    // Allow submit
+    contradictions = [];
     document.getElementById('alert-box').classList.remove('visible');
+    document.getElementById('submit-error').style.display = 'none';
+    addToFeed('warning', 'استثناء مُقدَّم للمراجعة', `سبب: ${reason.substring(0,40)}... — مستند مرفق ✓`);
+
+    // إضافة للجدول استثناءات
+    const tbody = document.getElementById('exceptions-tbody');
+    if (tbody) {
+      const fname = document.getElementById('f-fname').value.trim();
+      const lname = document.getElementById('f-lname').value.trim();
+      const name  = fname && lname ? fname + ' ' + lname : 'مجهول';
+      const exNum = tbody.querySelectorAll('tr').length + 1;
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td style="color:var(--text-muted)">EX-00${exNum}</td>
+        <td style="font-weight:600">${name}</td>
+        <td style="color:var(--warning);font-size:12px">${reason.substring(0,30)}...</td>
+        <td style="font-size:12px;color:var(--text-muted)">${fileInput.files[0].name}</td>
+        <td style="font-size:12px;color:var(--text-muted)">الآن</td>
+        <td><span class="status-badge pending">بانتظار</span></td>
+        <td>
+          <button onclick="approveEx(this)" style="background:none;border:none;color:var(--accent3);cursor:pointer;font-size:18px;margin-left:8px">✓</button>
+          <button onclick="rejectEx(this)" style="background:none;border:none;color:var(--danger);cursor:pointer;font-size:18px">✗</button>
+        </td>`;
+      tbody.insertBefore(tr, tbody.firstChild);
+    }
+
+    // إعادة تعيين الـ modal
+    document.getElementById('exception-reason').value = '';
+    fileInput.value = '';
+    document.getElementById('file-name').style.display = 'none';
+    document.querySelector('.upload-area p').textContent = 'اضغط لرفع المستند الداعم (PDF, صورة)';
   }
 
   // ===== SUBMIT FORM =====
