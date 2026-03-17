@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -1513,53 +1512,48 @@
                 <th>#</th>
                 <th>المستخدم</th>
                 <th>التناقض المكتشف</th>
-                <th>نوع الاستثناء</th>
+                <th>سبب الاستثناء</th>
+                <th>المستند</th>
                 <th>الوقت</th>
                 <th>الحالة</th>
                 <th>إجراء</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="exceptions-tbody">
               <tr>
                 <td style="color:var(--text-muted)">EX-001</td>
                 <td>أحمد العمري</td>
                 <td style="color:var(--danger);font-size:12px">مهندس + ثانوي</td>
-                <td style="font-size:12px;color:var(--text-muted)">مستند تعليمي</td>
+                <td style="font-size:12px;color:var(--text-muted);max-width:160px">لديّ شهادة معادلة من مؤسسة دولية غير مصنفة محلياً</td>
+                <td style="font-size:12px"><span style="color:var(--accent);cursor:pointer" onclick="previewDoc('شهادة_معادلة.pdf')">📄 شهادة_معادلة.pdf</span></td>
                 <td style="font-size:12px;color:var(--text-muted)">منذ 5 دقائق</td>
                 <td><span class="status-badge pending">بانتظار</span></td>
                 <td>
-                  <button onclick="approveEx(this)" style="background:none;border:none;color:var(--accent3);cursor:pointer;font-size:18px;margin-left:8px">✓</button>
-                  <button onclick="rejectEx(this)" style="background:none;border:none;color:var(--danger);cursor:pointer;font-size:18px">✗</button>
+                  <button onclick="approveEx(this)" title="قبول" style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);color:var(--accent3);cursor:pointer;font-size:14px;padding:4px 10px;border-radius:6px;margin-left:4px">✓ قبول</button>
+                  <button onclick="rejectEx(this)" title="رفض" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:var(--danger);cursor:pointer;font-size:14px;padding:4px 10px;border-radius:6px">✗ رفض</button>
                 </td>
               </tr>
               <tr>
                 <td style="color:var(--text-muted)">EX-002</td>
                 <td>فاطمة الزهراني</td>
                 <td style="color:var(--danger);font-size:12px">دكتوراه + 1 سنة خبرة</td>
-                <td style="font-size:12px;color:var(--text-muted)">حديث التخرج</td>
+                <td style="font-size:12px;color:var(--text-muted);max-width:160px">حديثة التخرج، تخرجت هذا العام وهذه أول وظيفة</td>
+                <td style="font-size:12px"><span style="color:var(--accent);cursor:pointer" onclick="previewDoc('شهادة_تخرج.jpg')">📄 شهادة_تخرج.jpg</span></td>
                 <td style="font-size:12px;color:var(--text-muted)">منذ 12 دقيقة</td>
                 <td><span class="status-badge pending">بانتظار</span></td>
                 <td>
-                  <button onclick="approveEx(this)" style="background:none;border:none;color:var(--accent3);cursor:pointer;font-size:18px;margin-left:8px">✓</button>
-                  <button onclick="rejectEx(this)" style="background:none;border:none;color:var(--danger);cursor:pointer;font-size:18px">✗</button>
+                  <button onclick="approveEx(this)" title="قبول" style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);color:var(--accent3);cursor:pointer;font-size:14px;padding:4px 10px;border-radius:6px;margin-left:4px">✓ قبول</button>
+                  <button onclick="rejectEx(this)" title="رفض" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:var(--danger);cursor:pointer;font-size:14px;padding:4px 10px;border-radius:6px">✗ رفض</button>
                 </td>
               </tr>
               <tr>
                 <td style="color:var(--text-muted)">EX-003</td>
                 <td>خالد المطيري</td>
                 <td style="color:var(--danger);font-size:12px">باحث + دبلوم</td>
-                <td style="font-size:12px;color:var(--text-muted)">شهادة معادلة</td>
+                <td style="font-size:12px;color:var(--text-muted);max-width:160px">شهادة معادلة من جامعة خارجية معترف بها</td>
+                <td style="font-size:12px"><span style="color:var(--text-muted)">📄 معادلة.pdf</span></td>
                 <td style="font-size:12px;color:var(--text-muted)">منذ 28 دقيقة</td>
                 <td><span class="status-badge approved">مقبول</span></td>
-                <td><span style="font-size:12px;color:var(--text-muted)">تم البت</span></td>
-              </tr>
-              <tr>
-                <td style="color:var(--text-muted)">EX-004</td>
-                <td>نوره السعد</td>
-                <td style="color:var(--danger);font-size:12px">طبيب + ماجستير</td>
-                <td style="font-size:12px;color:var(--text-muted)">طب تخصصي</td>
-                <td style="font-size:12px;color:var(--text-muted)">منذ 1 ساعة</td>
-                <td><span class="status-badge rejected">مرفوض</span></td>
                 <td><span style="font-size:12px;color:var(--text-muted)">تم البت</span></td>
               </tr>
             </tbody>
@@ -1838,6 +1832,7 @@
 
   let contradictions = [];
   let confidenceScore = 100;
+  let exceptionSubmitted = false; // هل رُفع استثناء؟
 
   function getJobLevel(jobText) {
     if (!jobText) return null;
@@ -2020,6 +2015,7 @@
     // إذا كل شيء صح → أرسل
     closeModal();
     contradictions = [];
+    exceptionSubmitted = true; // تم رفع استثناء
     document.getElementById('alert-box').classList.remove('visible');
     document.getElementById('submit-error').style.display = 'none';
     addToFeed('warning', 'استثناء مُقدَّم للمراجعة', `سبب: ${reason.substring(0,40)}... — مستند مرفق ✓`);
@@ -2027,21 +2023,30 @@
     // إضافة للجدول استثناءات
     const tbody = document.getElementById('exceptions-tbody');
     if (tbody) {
-      const fname = document.getElementById('f-fname').value.trim();
-      const lname = document.getElementById('f-lname').value.trim();
-      const name  = fname && lname ? fname + ' ' + lname : 'مجهول';
-      const exNum = tbody.querySelectorAll('tr').length + 1;
+      const fname   = document.getElementById('f-fname').value.trim();
+      const lname   = document.getElementById('f-lname').value.trim();
+      const name    = fname && lname ? fname + ' ' + lname : 'مجهول';
+      const exRows  = tbody.querySelectorAll('tr').length;
+      const exNum   = String(exRows + 1).padStart(3,'0');
+      const fileName = fileInput.files[0].name;
+      // التناقض المكتشف
+      const edu2val = document.getElementById('f-edu').value;
+      const job2val = document.getElementById('f-job').value.trim();
+      const contradiction = (job2val && edu2val) ? `${job2val} + ${edu2val}` : 'تناقض مكتشف';
       const tr = document.createElement('tr');
       tr.innerHTML = `
-        <td style="color:var(--text-muted)">EX-00${exNum}</td>
+        <td style="color:var(--text-muted)">EX-${exNum}</td>
         <td style="font-weight:600">${name}</td>
-        <td style="color:var(--warning);font-size:12px">${reason.substring(0,30)}...</td>
-        <td style="font-size:12px;color:var(--text-muted)">${fileInput.files[0].name}</td>
+        <td style="color:var(--danger);font-size:12px">${contradiction}</td>
+        <td style="font-size:12px;color:var(--text-muted);max-width:160px">${reason}</td>
+        <td style="font-size:12px">
+          <span style="color:var(--accent);cursor:pointer" onclick="previewDoc('${fileName}')">📄 ${fileName}</span>
+        </td>
         <td style="font-size:12px;color:var(--text-muted)">الآن</td>
         <td><span class="status-badge pending">بانتظار</span></td>
         <td>
-          <button onclick="approveEx(this)" style="background:none;border:none;color:var(--accent3);cursor:pointer;font-size:18px;margin-left:8px">✓</button>
-          <button onclick="rejectEx(this)" style="background:none;border:none;color:var(--danger);cursor:pointer;font-size:18px">✗</button>
+          <button onclick="approveEx(this)" style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);color:var(--accent3);cursor:pointer;font-size:14px;padding:4px 10px;border-radius:6px;margin-left:4px">✓ قبول</button>
+          <button onclick="rejectEx(this)" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:var(--danger);cursor:pointer;font-size:14px;padding:4px 10px;border-radius:6px">✗ رفض</button>
         </td>`;
       tbody.insertBefore(tr, tbody.firstChild);
     }
@@ -2051,6 +2056,7 @@
     fileInput.value = '';
     document.getElementById('file-name').style.display = 'none';
     document.querySelector('.upload-area p').textContent = 'اضغط لرفع المستند الداعم (PDF, صورة)';
+
   }
 
   // ===== SUBMIT FORM =====
@@ -2154,11 +2160,16 @@
     document.getElementById('success-overlay').classList.remove('open');
   }
 
+  function previewDoc(name) {
+    alert('📄 المستند: ' + name + '\n\nملاحظة: معاينة الملفات تتوفر بعد ربط قاعدة البيانات.');
+  }
+
   function resetForm() {
     ['f-fname','f-lname','f-exp','f-salary','f-grad','f-job'].forEach(id => document.getElementById(id).value = '');
     document.getElementById('f-edu').value = '';
     contradictions = [];
     confidenceScore = 100;
+    exceptionSubmitted = false;
     updateConfidenceUI(100);
     document.getElementById('alert-box').classList.remove('visible');
     document.getElementById('analysis-body').innerHTML = `
